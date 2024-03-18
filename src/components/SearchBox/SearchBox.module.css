@@ -1,0 +1,17 @@
+.icon {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .input:focus {
+    border-color: green;
+  }
+  
