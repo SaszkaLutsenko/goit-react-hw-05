@@ -1,4 +1,3 @@
-import style from './MoviesPage.module.css';
 import { useEffect, useState } from 'react';
 import SearchBox from '../../components/SearchBox/SearchBox';
 import { fetchData } from '../../movies-api';
@@ -6,7 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import Loader from '../../components/Loader/Loader';
 import MovieList from '../../components/MovieList/MovieList';
 import { useSearchParams } from 'react-router-dom';
-
+import style from './MoviesPage.module.css';
 
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
@@ -22,7 +21,7 @@ const MoviesPage = () => {
         setIsLoading(true);
         const { results } = await fetchData('search/movie', { query });
         if (results.length === 0 && query !== '') {
-          toast('Nothing found for your query', { id: 'notFound', duration: 2000 });
+          toast("Sorry, we couldn't find anything", { id: 'notFound', duration: 2000 });
           return;
         }
         setMovies(results);
@@ -37,11 +36,9 @@ const MoviesPage = () => {
 
   return (
     <div>
-      <p className={style.text}>
-        Discover your next movie with ease at <span className={style.logo}>MoviePulse</span>. Browse
-        thousands of titles, from blockbusters to classics, with detailed descriptions and ratings.
-        Start exploring now!
-      </p>
+     <p className={style.text}>
+We will help you find something interesting to watch. Enter a keyword to search for.
+</p>
       <SearchBox />
       {movies.length > 0 && <MovieList movies={movies} />}
       {isLoading && <Loader />}
@@ -51,3 +48,4 @@ const MoviesPage = () => {
 };
 
 export default MoviesPage;
+
