@@ -6,6 +6,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import Loader from '../../components/Loader/Loader';
 import BackLink from '../../components/BackLink/BackLink';
 import clsx from 'clsx';
+import { createImgURL } from '../../utils';
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(style.link, isActive && style.isActive); 
@@ -42,7 +43,7 @@ const MovieDetailsPage = () => {
       <BackLink to={backLinkRef.current} />
       <div className={style.movieInfoContainer}> 
         <div className={style.poster}>
-          <img src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} alt={`${movie?.title} poster`} />
+          <img src={createImgURL(movie?.poster_path)} alt={`${movie?.title} poster`} />
         </div>
         <div className={style.movieDesc}>
           <p className={style.title}>{movie?.title}</p>

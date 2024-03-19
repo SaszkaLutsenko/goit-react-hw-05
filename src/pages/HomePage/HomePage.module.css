@@ -1,11 +1,14 @@
 .title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: grey;
+  text-align: center; 
 
-  @media (min-width: 768px) {
-    .title {
-      font-size: 32px;
-    }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 32px;
   }
+}

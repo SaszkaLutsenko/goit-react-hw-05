@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import toast, { Toaster } from 'react-hot-toast';
 import Loader from '../Loader/Loader';
 import { fetchData } from '../../movies-api';
+import { createImgURL } from '../../utils';
 
 // Окремий компонент для відображення інформації про рецензії
 const ReviewItem = ({ id, content, authorDetails }) => {
@@ -15,7 +16,7 @@ const ReviewItem = ({ id, content, authorDetails }) => {
                     {typeof avatar_path === 'string' && (
                         <img
                             className={styles.avatar}
-                            src={`https://image.tmdb.org/t/p/w500/${avatar_path}`}
+                            src={createImgURL(avatar_path)}
                             alt={`${name ? name : 'no information'} avatar`}
                         />
                     )}
