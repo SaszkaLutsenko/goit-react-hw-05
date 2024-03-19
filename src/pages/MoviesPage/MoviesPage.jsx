@@ -35,7 +35,8 @@ const MoviesPage = () => {
   }, [query]);
 
   return (
-    <div>
+    <div className={style.contener}>
+    <div  className={style.content}>
      <p className={style.text}>
 We will help you find something interesting to watch. Enter a keyword to search for.
 </p>
@@ -43,6 +44,7 @@ We will help you find something interesting to watch. Enter a keyword to search 
       {movies.length > 0 && <MovieList movies={movies} />}
       {isLoading && <Loader />}
       <Toaster />
+    </div>
     </div>
   );
 };

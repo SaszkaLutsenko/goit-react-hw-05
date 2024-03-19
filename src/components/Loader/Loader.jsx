@@ -1,12 +1,13 @@
-import { Grid } from 'react-loader-spinner';
-
+import { InfinitySpin } from 'react-loader-spinner';
 const Loader = () => (
-  <Grid
+
+  <InfinitySpin
     visible={true}
-    width={200}
-    color="#808080"
-    ariaLabel="loading..."
-  />
+    width="200"
+    color="	#808080"
+    ariaLabel="infinity-spin-loading"
+    />
+  
 );
 
 export default Loader;
